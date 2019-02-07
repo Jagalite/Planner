@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Planner</string>
+
+
+    <string-array name="frequencies">
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+    </string-array>
+
+</resources>
