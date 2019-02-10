@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import kotlinx.android.synthetic.main.recyclerview_row.view.*
 
-class CashFlowAdapter(private val cashFlowData: List<CashFlow>) : RecyclerView.Adapter<CashFlowAdapter.MyViewHolder>() {
+data class CashFlowAdapter(private val cashFlowData: List<CashFlow>, var cashFlowConversion: CashFlowConversion) :
+    RecyclerView.Adapter<CashFlowAdapter.MyViewHolder>() {
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.cashflowRecyclerTextRow
@@ -19,7 +20,8 @@ class CashFlowAdapter(private val cashFlowData: List<CashFlow>) : RecyclerView.A
 
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.textView.text = cashFlowData[position].amount.toString() + " - " + cashFlowData[position].frequency
+        holder.textView.text =
+            cashFlowConversion.convertYearToTargetFrequency(cashFlowData[position]).toString() + " - " + cashFlowData[position].frequency.value
     }
 
     override fun getItemCount() = cashFlowData.size
