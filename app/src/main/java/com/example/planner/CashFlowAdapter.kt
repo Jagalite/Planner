@@ -19,7 +19,7 @@ class CashFlowAdapter(private val cashFlowData: List<CashFlow>) : RecyclerView.A
 
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.textView.text = cashFlowData[position].amount.toString()
+        holder.textView.text = cashFlowData[position].amount.toString() + " - " + cashFlowData[position].frequency
     }
 
     override fun getItemCount() = cashFlowData.size

@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         cashFlows.add(
             CashFlow(
                 "",
-                frequencySpinner.toString(),
+                frequencySpinner.selectedItem.toString(),
                 java.lang.Double.parseDouble(amountTextView.text.toString())
             )
         )
@@ -75,14 +75,6 @@ class MainActivity : AppCompatActivity() {
         cashFlows.forEach { totalAmount += it.amount }
         findViewById<TextView>(R.id.cashFlowTotal).text = totalAmount.toString()
     }
-
-//    fun updateCashFlowList() {
-////        findViewById<ListView>(R.id.cashflowListView).adapter = ArrayAdapter(
-////            this,
-////            android.R.layout.simple_list_item_1,
-////            cashFlows.map { it.amount.toString() }
-////        )
-////    }
 
     private fun updateCashFlowTable() {
         viewAdapter.notifyDataSetChanged()
