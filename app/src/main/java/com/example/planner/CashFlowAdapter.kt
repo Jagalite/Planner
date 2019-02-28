@@ -20,8 +20,7 @@ data class CashFlowAdapter(private val cashFlowData: List<CashFlow>, var cashFlo
 
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.textView.text =
-            cashFlowConversion.convertYearToTargetFrequency(cashFlowData[position]).toString() + " - " + cashFlowData[position].frequency.value
+        holder.textView.text = cashFlowConversion.convertYearToTargetFrequency(cashFlowData[position]).toString()
     }
 
     override fun getItemCount() = cashFlowData.size

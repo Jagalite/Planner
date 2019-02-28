@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun add(view: View) {
-
         val frequencySpinner = findViewById<Spinner>(R.id.inputFrequency)
         val amountTextView = findViewById<TextView>(R.id.inputAmount)
 
@@ -78,7 +77,6 @@ class MainActivity : AppCompatActivity() {
             )
         )
         totalCashFlows()
-
         updateCashFlowTable()
     }
 
