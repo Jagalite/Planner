@@ -21,15 +21,15 @@ class MainActivity : AppCompatActivity() {
 
         //======================================================================================================
 
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.frequencies,
-            android.R.layout.simple_spinner_item
-        ).also { arrayAdapter ->
-            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            findViewById<Spinner>(R.id.inputFrequency).adapter = arrayAdapter
-            findViewById<Spinner>(R.id.switchFrequency).adapter = arrayAdapter
-        }
+//        ArrayAdapter.createFromResource(
+//            this,
+//            R.array.frequencies,
+//            android.R.layout.simple_spinner_item
+//        ).also { arrayAdapter ->
+//            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//            findViewById<Spinner>(R.id.inputFrequency).adapter = arrayAdapter
+//            findViewById<Spinner>(R.id.switchFrequency).adapter = arrayAdapter
+//        }
 
         findViewById<Spinner>(R.id.switchFrequency).onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
@@ -64,20 +64,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun add(view: View) {
-        val frequencySpinner = findViewById<Spinner>(R.id.inputFrequency)
-        val amountTextView = findViewById<TextView>(R.id.inputAmount)
-
-        if (amountTextView.text.toString() == "") return
-
-        cashFlows.add(
-            CashFlow(
-                "",
-                Frequency.valueOf(frequencySpinner.selectedItem.toString().toUpperCase()),
-                java.lang.Double.parseDouble(amountTextView.text.toString())
-            )
-        )
-        totalCashFlows()
-        updateCashFlowTable()
+//        val frequencySpinner = findViewById<Spinner>(R.id.inputFrequency)
+//        val amountTextView = findViewById<TextView>(R.id.inputAmount)
+//
+//        if (amountTextView.text.toString() == "") return
+//
+//        cashFlows.add(
+//            CashFlow(
+//                "",
+//                Frequency.valueOf(frequencySpinner.selectedItem.toString().toUpperCase()),
+//                java.lang.Double.parseDouble(amountTextView.text.toString())
+//            )
+//        )
+//        totalCashFlows()
+//        updateCashFlowTable()
     }
 
     fun totalCashFlows() {
